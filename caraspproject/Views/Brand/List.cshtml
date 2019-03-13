@@ -1,0 +1,12 @@
+﻿@using caraspproject.Data.Model
+
+@model IEnumerable<Brand>
+
+<a class="btn btn-success mt-5" style="margin:10px" asp-controller="Brand" asp-action="Create">Dodaj nową markę</a>
+
+<div class="row">
+    @foreach (var brand in Model)
+    {
+        @Html.Partial("BrandPartial", brand)
+    }
+</div>

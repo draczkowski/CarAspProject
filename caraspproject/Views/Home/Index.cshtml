@@ -1,0 +1,39 @@
+﻿@model HomeViewModel
+@{
+    int availableCars= Model.CarsCount - Model.LendCarCount;
+}
+
+<h1>Car management dashboard</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Client Count
+            </div>
+            <div class="panel-body">
+                There are @Model.ClientCount clients
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Brands Count
+            </div>
+            <div class="panel-body">
+                There are @Model.BrandCount brands
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Cars count
+            </div>
+            <div class="panel-body">
+                There are @availableCars cars available out of @Model.CarCount cars
+            </div>
+        </div>
+    </div>
+</div>

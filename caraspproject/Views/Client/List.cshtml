@@ -1,0 +1,35 @@
+﻿@using caraspproject.ViewModel;
+@model IEnumerable<ClientViewModel>
+
+<a class="btn btn-success mt-5" style="margin:10px" asp-controller="Client" asp-action="Create">Create new client</a>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Borrowed cars count</th>
+            <th>Edit client</th>
+            <th>Delete client</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var clientVM in Model)
+        {
+            <tr>
+                <td>@clientVM.Client.ClientId</td>
+                <td>@clientVM.Client.Name</td>
+                <td>@clientVM.Client.CarCount</td>
+                <td> <a class="btn btn-info" asp-area="" asp-controller="Client" asp-action="Update" asp-route-id="@clientVM.Client.ClientId">Edit</a></td>
+                <td> <a class="btn btn-danger" asp-area="" asp-controller="Client" asp-action="Delete" asp-route-id="@clientVM.Client.ClientId">Delete</a></td>
+                
+            </tr>
+        }
+    </tbody>
+
+
+
+
+
+
+</table>

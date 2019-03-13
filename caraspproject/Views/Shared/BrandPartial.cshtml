@@ -1,0 +1,27 @@
+﻿@using caraspproject.Data.Model
+
+@model Brand
+
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <p>@Model.Name</p>
+        </div>
+        <div class="panel-body">
+            <h2>Car Count:  @Model.Cars?.Count</h2>
+            <div class="btn-group">
+                @if (Model.Cars?.Count == 0)
+                {
+                    <a class="btn btn-default" asp-area="">Zobacz listę aut</a>
+                }
+                else
+                {
+                    <a class="btn btn-info" asp-area="" asp-controller="Car" asp-action="List" asp-route-brandId="@Model.BrandId">Zobacz listę aut</a>
+                }
+                <a class="btn btn-info" asp-area="" asp-controller="Brand" asp-action="Update" asp-route-id="@Model.BrandId">Edytuj</a>
+                <a class="btn btn-danger" asp-area="" asp-controller="Brand" asp-action="Delete" asp-route-id="@Model.BrandId">Usuń</a>
+
+            </div>
+        </div>
+    </div>
+</div>
